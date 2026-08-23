@@ -1,5 +1,5 @@
 namespace ECommerce.OrderService.Domain.ValueObjects;
-
+ 
 public sealed record Money
 {
     public decimal Amount { get; }
