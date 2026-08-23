@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.OrderService.Application\ECommerce.OrderService.Application.csproj" />
+    <ProjectReference Include="..\ECommerce.OrderService.Infrastructure\ECommerce.OrderService.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
