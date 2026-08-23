@@ -1,0 +1,42 @@
+## --- Carpetas personalizadas e ignoradas del proyecto ---
+Documentation/
+documentation/
+.git/
+
+## --- Archivos del Sistema Operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## --- Archivos de compilación y salida (.NET / C#) ---
+[Bb]in/
+[Oo]bj/
+out/
+[LGs]og/
+[LGs]ogs/
+
+## --- Archivos de usuario y configuración local ---
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+## --- Entornos de desarrollo e IDEs ---
+.vs/
+.idea/
+.vscode/
+*.suo
+
+## --- Paquetes y Dependencias ---
+*.nupkg
+node_modules/
+
+## --- Configuración sensible / Entornos ---
+appsettings.Development.json
+appsettings.Local.json
+*.env
+
+## --- Publicación y Despliegue ---
+*.deploymanifest
+*.publishproj
+publish/
