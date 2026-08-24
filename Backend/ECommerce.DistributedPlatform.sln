@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.OrderService.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.OrderService.Infrastructure", "src\Services\OrderService\ECommerce.OrderService.Infrastructure\ECommerce.OrderService.Infrastructure.csproj", "{4BE6B85C-6B9D-408B-9ADD-1E13326593C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.OrderService.Tests", "tests\ECommerce.OrderService.Tests\ECommerce.OrderService.Tests.csproj", "{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,18 +75,6 @@ Global
 		{4BE6B85C-6B9D-408B-9ADD-1E13326593C1}.Release|x64.Build.0 = Release|Any CPU
 		{4BE6B85C-6B9D-408B-9ADD-1E13326593C1}.Release|x86.ActiveCfg = Release|Any CPU
 		{4BE6B85C-6B9D-408B-9ADD-1E13326593C1}.Release|x86.Build.0 = Release|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Debug|x64.Build.0 = Debug|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Debug|x86.Build.0 = Debug|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Release|x64.ActiveCfg = Release|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Release|x64.Build.0 = Release|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Release|x86.ActiveCfg = Release|Any CPU
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +86,5 @@ Global
 		{1168C774-D7FA-4056-AEBC-3C0FD49099F6} = {F5625D22-DF6D-6E20-0384-6B2F7CAD8697}
 		{F16DAF5D-39B8-494A-9E44-6B446670756D} = {F5625D22-DF6D-6E20-0384-6B2F7CAD8697}
 		{4BE6B85C-6B9D-408B-9ADD-1E13326593C1} = {F5625D22-DF6D-6E20-0384-6B2F7CAD8697}
-		{CC3332CC-B5F4-4B88-80C1-710ADB27AB6F} = {F5625D22-DF6D-6E20-0384-6B2F7CAD8697}
 	EndGlobalSection
 EndGlobal

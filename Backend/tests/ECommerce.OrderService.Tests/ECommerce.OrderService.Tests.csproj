@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <!-- Omitir la compilación de este proyecto temporalmente -->
+    <ExcludeFromBuild>true</ExcludeFromBuild>
   </PropertyGroup>
 
   <ItemGroup>

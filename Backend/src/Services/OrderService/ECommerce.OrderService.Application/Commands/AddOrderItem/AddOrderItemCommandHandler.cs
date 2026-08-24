@@ -1,9 +1,11 @@
 using ECommerce.OrderService.Application.Interfaces;
 using ECommerce.OrderService.Domain.ValueObjects;
+using MediatR;
 
 namespace ECommerce.OrderService.Application.Commands.AddOrderItem;
 
 public sealed class AddOrderItemCommandHandler
+    : IRequestHandler<AddOrderItemCommand>
 {
     private readonly IOrderRepository _orderRepository;
 
@@ -15,9 +17,10 @@ public sealed class AddOrderItemCommandHandler
 
     public async Task Handle(
         AddOrderItemCommand command,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken)
     {
-        var orderId = new OrderId(command.OrderId);
+        var orderId =
+            new OrderId(command.OrderId);
 
         var order = await _orderRepository.GetByIdAsync(
             orderId,

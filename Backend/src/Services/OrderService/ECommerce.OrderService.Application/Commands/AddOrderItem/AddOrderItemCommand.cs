@@ -1,3 +1,5 @@
+using MediatR;
+
 namespace ECommerce.OrderService.Application.Commands.AddOrderItem;
 
 public sealed record AddOrderItemCommand(
@@ -5,4 +7,4 @@ public sealed record AddOrderItemCommand(
     Guid ProductId,
     int Quantity,
     decimal UnitPrice,
-    string Currency);
+    string Currency) : IRequest;
