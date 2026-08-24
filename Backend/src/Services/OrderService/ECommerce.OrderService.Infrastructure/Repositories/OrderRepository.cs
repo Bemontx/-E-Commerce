@@ -26,6 +26,15 @@ public sealed class OrderRepository : IOrderRepository
                 cancellationToken);
     }
 
+    public async Task<IReadOnlyList<Order>> GetAllAsync(
+    CancellationToken cancellationToken)
+    {
+        return await _dbContext.Orders
+            .Include(x => x.Items)
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
+    }
+
     public async Task AddAsync(
         Order order,
         CancellationToken cancellationToken = default)

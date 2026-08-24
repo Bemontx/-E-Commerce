@@ -1,5 +1,7 @@
 using ECommerce.OrderService.Application.Commands.AddOrderItem;
 using ECommerce.OrderService.Application.Commands.CreateOrder;
+using ECommerce.OrderService.Application.Queries.GetOrder;
+using ECommerce.OrderService.Application.Queries.GetOrders;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,9 +54,29 @@ public sealed class OrdersController : ControllerBase
     }
 
     [HttpGet("{id:guid}")]
-    public IActionResult GetOrder(Guid id)
+    public async Task<IActionResult> GetOrder(
+       Guid id,
+       CancellationToken cancellationToken)
     {
-        return Ok();
+        var result = await _sender.Send(
+            new GetOrderQuery(id),
+            cancellationToken);
+
+        if (result is null)
+            return NotFound();
+
+        return Ok(result);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetOrders(
+    CancellationToken cancellationToken)
+    {
+        var result = await _sender.Send(
+            new GetOrdersQuery(),
+            cancellationToken);
+
+        return Ok(result);
     }
 }
 

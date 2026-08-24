@@ -15,11 +15,6 @@ public sealed class Order
     public CustomerId CustomerId { get; private set; }
 
     public OrderStatus Status { get; private set; }
-
-    public IReadOnlyCollection<IDomainEvent> GetDomainEvents()
-    {
-        return _domainEvents.AsReadOnly();
-    }
     public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
     public IReadOnlyCollection<OrderItem> Items =>
         _items.AsReadOnly();

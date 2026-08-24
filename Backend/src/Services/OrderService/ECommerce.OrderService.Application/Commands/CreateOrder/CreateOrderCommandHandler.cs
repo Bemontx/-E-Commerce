@@ -41,10 +41,12 @@ public sealed class CreateOrderCommandHandler
             order.Total.Currency,
             order.Items
                 .Select(item => new OrderItemResponse(
-                    item.ProductId,
-                    item.Quantity,
-                    item.UnitPrice.Amount,
-                    item.UnitPrice.Currency))
-                .ToList());
+                item.ProductId,
+                item.Quantity,
+                item.UnitPrice.Amount,
+                item.Total.Amount,     
+                item.UnitPrice.Currency  
+            ))
+            .ToList());
     }
 }
