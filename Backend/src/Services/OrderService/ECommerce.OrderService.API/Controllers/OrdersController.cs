@@ -27,7 +27,7 @@ public sealed class OrdersController : ControllerBase
 
         return CreatedAtAction(
             nameof(GetOrder),
-            new { id = order.Id.Value },
+            new { id = order.Id },
             order);
     }
 

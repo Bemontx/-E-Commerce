@@ -1,3 +1,4 @@
+using ECommerce.OrderService.Application.DTOs;
 using ECommerce.OrderService.Application.Interfaces;
 using ECommerce.OrderService.Domain.Aggregates;
 using ECommerce.OrderService.Domain.ValueObjects;
@@ -6,7 +7,7 @@ using MediatR;
 namespace ECommerce.OrderService.Application.Commands.CreateOrder;
 
 public sealed class CreateOrderCommandHandler
-    : IRequestHandler<CreateOrderCommand, Order>
+    : IRequestHandler<CreateOrderCommand, OrderResponse>
 {
     private readonly IOrderRepository _orderRepository;
 
@@ -16,19 +17,34 @@ public sealed class CreateOrderCommandHandler
         _orderRepository = orderRepository;
     }
 
-    public async Task<Order> Handle(
-        CreateOrderCommand command,
+    public async Task<OrderResponse> Handle(
+        CreateOrderCommand request,
         CancellationToken cancellationToken)
     {
-        var customerId =
-            new CustomerId(command.CustomerId);
-
-        var order = new Order(customerId);
+        var order = new Order(
+            new CustomerId(request.CustomerId));
 
         await _orderRepository.AddAsync(
             order,
             cancellationToken);
 
-        return order;
+        return MapToResponse(order);
+    }
+
+    private static OrderResponse MapToResponse(Order order)
+    {
+        return new OrderResponse(
+            order.Id.Value,
+            order.CustomerId.Value,
+            order.Status.ToString(),
+            order.Total.Amount,
+            order.Total.Currency,
+            order.Items
+                .Select(item => new OrderItemResponse(
+                    item.ProductId,
+                    item.Quantity,
+                    item.UnitPrice.Amount,
+                    item.UnitPrice.Currency))
+                .ToList());
     }
 }
